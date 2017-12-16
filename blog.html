@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aman's Blog</title>
+  <link rel="stylesheet" type="text/css" href="css1.css">
+  <meta name ="viewport"
+  content ="width=device-width,
+  initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  <!--<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">-->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+
+
+ <nav class="navbar navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Aman's Blogs</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Blogs</a></li>
+      <li><a href="#">About</a></li>
+
+    </ul>
+
+
+    <form class="navbar-form navbar-left" action="/action_page.php">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" name="search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <h3 class="navbar-text" id="t1" style="display:none;color:red">Some text</h3>
+            <li><button type="button" class="btn btn-primary" onclick="logout()" style="display:none" id="btn3" data-toggle="modal" data-target="#exampleModal3"><span class="glyphicon glyphicon-user"></span>Logout</button>
+      <li><button type="button" id="btn1" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-user"></span> Sign Up</button>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="form1" onsubmit="return store();">
+                  <div class="form-group">
+                    <label for="exampleFirstName1">Email</label>
+                    <input type="email" class="form-control" id="firstname" placeholder="Email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                    <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter Username">
+
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password">
+                  </div>
+                </form>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button  type="submit" form="form1" class="btn btn-primary">Sign Up</button>
+                </div>
+              </div>
+            </div>
+          </div></li>
+          <li><button type="button" class="btn btn-primary" id="btn2" data-toggle="modal" data-target="#exampleModal1"><span class="glyphicon glyphicon-log-in"></span>Login</button>
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModal1Label" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form id="form2">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" id="user1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Username">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" id="pass1" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                      </div>
+                    </form>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" onclick="return multiple();" data-dismiss="modal" form="form2" class="btn btn-primary">Log in</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+
+          <img class="d-block w-100" src="w1.jpg">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="2.jpg">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="w2.jpg">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <br>
+
+    <div class="card-group">
+
+     <div class="card" style="width: 20rem;">
+      <img class="card-img-top" id="b1" src="4.jpg">
+      <span style="display:none;" id="span1"></span>
+      <div class="card-body">
+        <h4 class="card-title" id="card1">Poetry night</h4>
+        <p class="card-text" id="a1">The first night of the bitotsav nights.</p>
+        <a href="dynamic.html" target="_blank"><button type="button" onclick=blog(document.getElementById("span1").innerHTML)> Read More</button></a>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top"id="b2" src="card.jpg">
+      <span style="display:none;" id="span2"></span>
+      <div class="card-body">
+        <h4 class="card-title" id="card2">Day events</h4>
+        <p class="card-text" id="a2">Events like nukkad , mime , quizes etc. comes in day events .</p>
+        <a href="dynamic.html" target="_blank"> <button type="button" onclick=blog(document.getElementById("span2").innerHTML)> Read More</button></a>
+      </div>
+    </div>
+    <div class="card" style="width: 20rem;">
+      <img class="card-img-top" id="b3" src="card.jpg">
+      <span style="display:none;" id="span3"></span>
+      <div class="card-body">
+        <h4 class="card-title" id="card3">Nights</h4>
+        <p class="card-text" id="a3">Some reknown celeb shows or dj nights.</p>
+        <a href="dynamic.html" target="_blank"><button type="button" onclick=blog(document.getElementById("span3").innerHTML)> Read More</button></a>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="container-fluid">
+    <section style="height:100px;"></section>
+    <div class="row" style="text-align:center;">
+      <h2></h2>
+    </div>
+    
+    <footer class="footer-bs">
+      <div class="row">
+        <div class="col-md-3 footer-brand animated fadeInLeft">
+          <h2>Logo</h2>
+          <p>Created By Aman Srivastava</p>
+          <p>© 2017 Aman Srivastava, All rights reserved</p>
+        </div>
+        <div class="col-md-4 footer-nav animated fadeInUp">
+          <h4>Menu —</h4>
+          <div class="col-md-6">
+            <ul class="pages">
+              <li><a href="#">Travel</a></li>
+              <li><a href="#">Nature</a></li>
+              <li><a href="#">Explores</a></li>
+              <li><a href="#">Science</a></li>
+              <li><a href="#">Advice</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <ul class="list">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contacts</a></li>
+              <li><a href="#">Terms & Condition</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-2 footer-social animated fadeInDown">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">RSS</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 footer-ns animated fadeInRight">
+          <h4>Newsletter</h4>
+          <p>A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+          <p>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+              </span>
+            </div><!-- /input-group -->
+          </p>
+        </div>
+      </div>
+    </footer>
+    <section style="text-align:center;margin:10px auto;"><p>Designed by Aman Srivastava</p></section>
+
+  </div>
+  <script src="javascript.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+</body>
+</html>

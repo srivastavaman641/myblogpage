@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dynamic</title>
+</style>
+</head>
+<body>
+  <div class="container" id="title"><h1>Hello</h1></div>
+  <div class="container" id="body"><p>HEY THERE</p></div>
+  <img id="image" src="1.jpg">
+</body>
+<script type="text/javascript">
+  var xhttp=new XMLHttpRequest();
+   xhttp.onreadystatechange=function(){
+    if(this.readyState==4 && this.status==200){
+    	obj=JSON.parse(this.responseText);
+    	console.log(obj);
+    	document.getElementById("title").innerHTML=obj.title;
+    	document.getElementById("body").innerHTML=obj.content;
+    	document.getElementById("image").src=obj.imageUrl;
+    }
+}
+var id=localStorage.getItem("id");
+console.log(id);
+var obj;
+obj={"blogId":id};
+xhttp.open("POST","http://www.koushikmln.com:7500/blogs/getBlog",true);
+xhttp.setRequestHeader("Content-type","application/JSON");
+xhttp.send(JSON.stringify(obj));
+</script>
+</html>
